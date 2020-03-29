@@ -11,15 +11,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_books_ID"
+    
+    <ViewFlipper
+        android:id="@+id/viewFlipper_books_ID"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_main_ID"
-        tools:listitem="@layout/item_book" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar_main_ID">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_books_ID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_main_ID"
+            tools:listitem="@layout/item_book" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView_error_ID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:text="Erro 401"/>
+
+    </ViewFlipper>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

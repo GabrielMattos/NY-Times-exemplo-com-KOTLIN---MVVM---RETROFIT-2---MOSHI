@@ -15,12 +15,10 @@ class BookDetailsActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book_details)
 
-        setupToolbar(toolbar_main_ID, R.string.books_title_Details)
+        setupToolbar(toolbar_main_ID, R.string.books_title_Details, true)
 
         textView_bookDetailsTitle_ID.text = intent.getStringExtra(EXTRA_TITLE)
         textView_bookDetailsDescription_ID.text = intent.getStringExtra(EXTRA_DESCRIPTION)
-
-
     }
 
     companion object
