@@ -5,16 +5,22 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.gabrielmattos.nybooks.R
+import br.com.gabrielmattos.nybooks.presentation.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_book_details.*
+import kotlinx.android.synthetic.main.include_toolbar.*
 
-class BookDetailsActivity : AppCompatActivity() {
+class BookDetailsActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book_details)
 
+        setupToolbar(toolbar_main_ID, R.string.books_title_Details)
+
         textView_bookDetailsTitle_ID.text = intent.getStringExtra(EXTRA_TITLE)
         textView_bookDetailsDescription_ID.text = intent.getStringExtra(EXTRA_DESCRIPTION)
+
+
     }
 
     companion object
