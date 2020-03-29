@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -23,6 +24,10 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -41,4 +46,8 @@ dependencies {
     implementation 'android.arch.lifecycle:extensions:1.1.1'
     implementation 'com.squareup.retrofit2:retrofit:2.8.1'
     implementation 'com.squareup.retrofit2:converter-moshi:2.8.1'
+    implementation("com.squareup.moshi:moshi:1.9.2")
+
+
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.9.2")
 }
